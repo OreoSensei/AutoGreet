@@ -21,7 +21,7 @@ driver = webdriver.Chrome(options=chrome_options)
 wait = WebDriverWait(driver, 10)
 driver.get("https://facebook.com")
 userid="oreosocial695@gmail.com"
-pwd="Alreadyhacked"
+pwd=""
 time.sleep(5)
 
 
