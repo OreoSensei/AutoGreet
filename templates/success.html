@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"/>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Success</title>
+        <style>
+            body {
+                background: white;
+                font-family: "Poppins", sans-serif;
+            }
+            
+            .btnn {
+                text-decoration: none;
+                outline: none;
+                padding: 10px 20px;
+                background: rgb(190, 255, 194);
+                color: rgb(2, 2, 2);
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+                transition: all 0.5s;
+                margin: 10px auto;
+                width: max-content;
+                text-align: center;
+            }
+            .btnn:hover {
+                background-color: rgb(85, 255, 96);
+            }
+            
+            .signupStyle {
+                display: flex;
+                justify-content: center;
+                align-content: center;
+                margin-top: 300px;
+                flex-direction: column;
+            }
+            
+            /* For layout purpose */
+            .BasicLayout {
+                width: 1100px;
+                height: auto;
+                max-width: 75%;
+                padding: 30px 50px;
+                float: left;
+                margin: 0 auto;
+                margin-bottom: 2em;
+                display: flex;
+                flex-direction: column;
+            }
+            
+            .outerDiv {
+                display: flex;
+            }
+            
+            .profileCards {
+                margin-top: 25px;
+                display: flex;
+                width: 310px;
+                border-radius: 5px;
+                margin-right: 5px;
+                justify-content: space-around;
+                padding: 15px;
+                align-items: center;
+                background-color: rgb(223, 255, 225);
+            }
+            
+            .profileImage {
+                width: 110px;
+                height: 110px;
+                border-radius: 50%;
+            }
+            
+            .profileName {
+                font-size: 1.6em;
+                font-weight: 500;
+                color: rgb(55, 255, 68);
+            }
+            
+            .flexDir{
+                display: flex;
+                gap: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="outerDiv">
+            <div class="BasicLayout">
+                <p><h1>Script Executed, {{ messages }}</h1></p>
+                <div id="birthCard" class="flexDir">
+                    {% for b in birthday %}
+                        <div class="profileCards">
+                            <div>
+                                <img class = "profileImage" alt="" src="{{birthday[b]['image']}}" />
+                            </div>
+                            <div>
+                                <a style="text-decoration: none;" href="{{birthday[b]['link']}}" target="_blank"><div class = "profileName">{{ birthday[b]['name'] }}</div></a>
+                                <div>{{ birthday[b]['date'] }}</div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
